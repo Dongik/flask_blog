@@ -22,8 +22,7 @@
 
   </head>
 
-  <body>
-
+  <bod
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
@@ -52,7 +51,7 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="masthead" style="background-image: url('img/about-bg.jpg')">
+    <header class="masthead" style="background-image: url('{{url_for('static', filename='about-bg.jpg')}}')">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
@@ -115,14 +114,14 @@
       </div>
     </footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/clean-blog.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+        <script src="{{url_for('static', filename='popper.min.js')}}"></script>
+        <script src="{{url_for('static', filename='bootstrap.min.js')}}"></script>
 
+        <!-- Custom scripts for this template -->
+        <script src="{{url_for('static', filename='clean-blog.min.js')}}"></script>
   </body>
 
 </html>
