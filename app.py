@@ -45,5 +45,9 @@ def contact():
 def add():
 	return render_template('add.html')
 
+@app.route('/webgl')
+def webgl():
+	return render_template('webgl_test.html')
+
 if __name__ == '__main__':
 	app.run(debug=True)
