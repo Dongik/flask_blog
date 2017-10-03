@@ -22,10 +22,6 @@ class User(db.Model):
         return '<User %r>' % self.username
 
 @app.route('/')
-def webgl():
-	return render_template('webgl.html')
-
-@app.route('/')
 def index():
 	return render_template('index.html')
 
