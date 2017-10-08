@@ -37,7 +37,6 @@ def about():
 def post(post_id):
 	post = Blogpost.query.filter_by(id=post_id).one()
 	date_posted = post.date_posted.strftime('%B %d, %Y')
-
 	return render_template('post.html',post=post, date_posted=date_posted)
 
 @app.route('/contact')
