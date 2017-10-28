@@ -10,7 +10,7 @@ client = MongoClient('39.162.99.200', 27017)
 app = Flask(__name__)
 
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////mnt/c/home/dongik/mySpace/flask_blog/blog.db'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/dongik/mySpace/flask_blog/blog.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////root/flask_blog/blog.db'
 
 db = SQLAlchemy(app)
 
@@ -22,12 +22,14 @@ class Blogpost(db.Model):
 	date_posted = db.Column(db.DateTime)
 	content = db.Column(db.Text)
 
-
 @app.route('/')
 def index():
-	posts = Blogpost.query.all()
+	return render_template('index_webgl.html')
 
-	return render_template('index_old.html', posts=posts)
+@app.route('/posts')
+def posts():
+	postList = Blogpost.query.all()
+	return render_template('index_old.html', posts=postList)
 
 @app.route('/about')
 def about():
